@@ -11,7 +11,7 @@
 char **to_tokens(char *user_input)
 {
 	int buffSize, index;
-	char *token, *delim = " ";
+	char *token, *delim = " \n\t";
 	char **tokens;
 
 	for (buffSize = 0; user_input[buffSize] != '\0'; buffSize++)
@@ -27,16 +27,11 @@ char **to_tokens(char *user_input)
 
 	token = strtok(user_input, delim);
 
-	for (index = 0; token != NULL;)
+	for (index = 0; token != NULL; index++)
 	{
 		tokens[index] = token;
 		token = strtok(NULL, delim);
-		index++;
 	}
-
-	tokens[index] = token;
-
-	_puts(user_input);
 
 /*
 	_puts("args: ");
