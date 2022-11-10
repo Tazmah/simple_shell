@@ -10,30 +10,43 @@
 
 char **to_tokens(char *user_input)
 {
-	int buffSize = 0;
+	int buffSize, index;
 	char *token, *delim = " ";
 	char **tokens;
 
-	while (user_input[buffSize] != '\0')
-		buffSize++;
+	for (buffSize = 0; user_input[buffSize] != '\0'; buffSize++)
+		;
 
 	tokens = malloc(buffSize * sizeof(char *));
 
 	if (!tokens)
 	{
-		_puts("tokens allocation error");
+		_puts("tokens allocation failed");
 		exit(EXIT_FAILURE);
 	}
 
 	token = strtok(user_input, delim);
 
-	for (buffSize = 0; token != NULL; buffSize++)
+	for (index = 0; token != NULL;)
 	{
-		tokens[buffSize] = token;
+		tokens[index] = token;
 		token = strtok(NULL, delim);
+		index++;
 	}
 
-	tokens[buffSize] = NULL;
+	tokens[index] = token;
 
+	_puts(user_input);
+
+/*
+	_puts("args: ");
+	for (index = 0; tokens[index] != NULL; index++)
+		_puts(tokens[index]), _puts(" ");
+
+*/
+/*
+	tokens[0] = "ls";
+	tokens[1] = NULL;
+*/
 	return (tokens);
 }

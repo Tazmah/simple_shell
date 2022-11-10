@@ -10,13 +10,23 @@
 int execute(char **args)
 {
 	pid_t pid;
-	int status;
+	int status, index;
+	(void)index;
+
+
+/*	for (index = 1; args[index]; index++)
+	{
+		_puts("arg:");
+		_puts(args[index]);
+		_puts("\n");
+	}
+*/
 
 	pid = fork();
 
 	if (pid == 0)
 	{
-		if (execv(args[0], args) == -1)
+		if ((execvp(args[0], args)) == -1)
 		{
 			perror("hsh");
 		}

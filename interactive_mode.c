@@ -14,7 +14,6 @@ void interactive(void)
 	int signal;
 
 	do {
-		_puts("($) ");
 		user_input = read_line();
 		args = to_tokens(user_input);
 		signal = execute_controller(args);
