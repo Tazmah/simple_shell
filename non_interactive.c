@@ -8,7 +8,7 @@
  * Return: 0 if successful
 */
 
-int normalMode(char *argv[])
+int normalMode(char **argv, char **envp)
 {
 	char **args;
 	int index = 1;
@@ -25,5 +25,5 @@ int normalMode(char *argv[])
 
 	args[index - 1] = NULL;
 
-	return (execute_controller(args));
+	return (execute_controller(args, envp));
 }

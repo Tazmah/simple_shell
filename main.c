@@ -10,15 +10,14 @@
  * Return: 0 if successfull
 */
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[], char **envp)
 {
-	(void)argc;
-	(void)argv;
+	(void)argc;	
 
 	if (argc > 1)
-		normalMode(argv);
+		normalMode(argv, envp);
 	else
-		interactive();
+		interactive(envp);
 
 	return (EXIT_SUCCESS);
 }

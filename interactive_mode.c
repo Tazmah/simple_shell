@@ -7,7 +7,7 @@
  * Return: nothing
 */
 
-void interactive(void)
+void interactive(char **envp)
 {
 	char *user_input;
 	char **args;
@@ -17,7 +17,7 @@ void interactive(void)
 		_puts("Tshell> ");
 		user_input = read_line();
 		args = to_tokens(user_input);
-		signal = execute_controller(args);
+		signal = execute_controller(args, envp);
 
 		free(args);
 		free(user_input);

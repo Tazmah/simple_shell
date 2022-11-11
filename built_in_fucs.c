@@ -7,9 +7,10 @@
  * Return: 0 alway
  */
 
-int texit(char **args)
+int texit(char **args, char **envp)
 {
 	(void)args;
+	(void)envp;
 	return (0);
 }
 
@@ -20,10 +21,16 @@ int texit(char **args)
  * Return: 1 always
  */
 
-int env(char **args)
+int env(char **args, char **envp)
 {
+	int index;
 	(void)args;
-	_puts("No function yet!\n");
+	(void)envp;
+
+	for (index = 0;envp[index] != NULL; index++)
+		_puts(envp[index]);
+	_puts("\n");
+
 	return (1);
 }
 
@@ -34,8 +41,11 @@ int env(char **args)
  * Return: 1 always
  */
 
-int cd(char **args)
+int cd(char **args, char **envp)
 {
+	(void)args;
+	(void)envp;
+
 	if (args[1] == NULL)
 		_puts("hsh: expected argument to cd");
 	else

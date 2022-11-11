@@ -10,8 +10,7 @@
 int execute(char **args)
 {
 	pid_t pid;
-	int status, index;
-	(void)index;
+	int status;
 
 
 	pid = fork();
