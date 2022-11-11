@@ -15,6 +15,7 @@ int execute_controller(char **args);
 int execute(char **args);
 int normalMode(char **argv);
 void interactive();
+void exit(int status);
 
 /* buit in prototypes */
 
