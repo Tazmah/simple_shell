@@ -16,4 +16,18 @@ int execute(char **args);
 int normalMode(char **argv);
 void interactive();
 
+/* buit in prototypes */
+
+int exit(char **);
+int env(char **);
+int cd(char **);
+built_in_t *get_built_in(void);
+
+struct built_in_t
+{
+	char *command;
+	(int)(*func)(char **);
+};
+
+typedef struct built_in_t built_in_t;
 #endif

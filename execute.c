@@ -14,14 +14,6 @@ int execute(char **args)
 	(void)index;
 
 
-/*	for (index = 1; args[index]; index++)
-	{
-		_puts("arg:");
-		_puts(args[index]);
-		_puts("\n");
-	}
-*/
-
 	pid = fork();
 
 	if (pid == 0)
@@ -29,9 +21,10 @@ int execute(char **args)
 		if ((execvp(args[0], args)) == -1)
 		{
 			perror("hsh");
+			exit(EXIT_FAILURE);
 		}
 
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	}
 	else if (pid < 0)
 	{

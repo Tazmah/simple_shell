@@ -33,15 +33,5 @@ char **to_tokens(char *user_input)
 		token = strtok(NULL, delim);
 	}
 
-/*
-	_puts("args: ");
-	for (index = 0; tokens[index] != NULL; index++)
-		_puts(tokens[index]), _puts(" ");
-
-*/
-/*
-	tokens[0] = "ls";
-	tokens[1] = NULL;
-*/
 	return (tokens);
 }
