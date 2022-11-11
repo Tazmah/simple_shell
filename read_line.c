@@ -14,8 +14,15 @@ char *read_line(void)
 
 	if ((getline(&user_input, &buff, stdin)) == -1)
 	{
-		perror("readline");
-		exit(EXIT_FAILURE);
+		if (feof(stdin))
+		{
+			exit(EXIT_SUCCESS);
+		}
+		else
+		{
+			perror("readline");
+			exit(EXIT_FAILURE);
+		}
 	}
 
 	return (user_input);

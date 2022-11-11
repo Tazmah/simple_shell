@@ -12,7 +12,7 @@
 
 int main(int argc, char *argv[], char **envp)
 {
-	(void)argc;	
+	(void)argc;
 
 	if (argc > 1)
 		normalMode(argv, envp);

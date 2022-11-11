@@ -27,7 +27,7 @@ int env(char **args, char **envp)
 	(void)args;
 	(void)envp;
 
-	for (index = 0;envp[index] != NULL; index++)
+	for (index = 0; envp[index] != NULL; index++)
 		_puts(envp[index]);
 	_puts("\n");
 
