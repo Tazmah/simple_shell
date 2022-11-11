@@ -25,6 +25,7 @@ int execute(char **args);
 int normalMode(char **argv);
 void interactive();
 void exit(int status);
+int compare(char *, char *);
 
 /* buit in prototypes */
 

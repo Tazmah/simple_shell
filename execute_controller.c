@@ -10,6 +10,7 @@
 
 int execute_controller(char **args)
 {
+	int index;
 
 	built_in_t list_built_in[] = {
 	{"exit", texit},
@@ -20,12 +21,10 @@ int execute_controller(char **args)
 
 	if (args[0] == NULL)
 		return (1);
-		
-	if (list_built_in[0].command == args[0])
-	{
-		_puts("Did I even run?");
-		return (texit(args));
-	}
+
+	for (index = 0; list_built_in[index].command != NULL; index++)
+		if (compare(list_built_in[index].command, args[0]))
+			return ((list_built_in[index].func)(args));
 
 	return (execute(args));
 }

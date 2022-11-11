@@ -23,7 +23,7 @@ int texit(char **args)
 int env(char **args)
 {
 	(void)args;
-	_puts("No function yet!");
+	_puts("No function yet!\n");
 	return (1);
 }
 
