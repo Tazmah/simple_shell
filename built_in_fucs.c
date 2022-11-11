@@ -7,7 +7,7 @@
  * Return: 0 alway
  */
 
-int exit(char **args)
+int texit(char **args)
 {
 	(void)args;
 	return (0);
@@ -23,7 +23,7 @@ int exit(char **args)
 int env(char **args)
 {
 	(void)args;
-	_put("No function yet!");
+	_puts("No function yet!");
 	return (1);
 }
 

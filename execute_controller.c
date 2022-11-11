@@ -10,18 +10,21 @@
 
 int execute_controller(char **args)
 {
-	int index;
-	char **built_in_funcs;
 
-	built_in_funcs = get_built_in();
+	built_in_t list_built_in[] = {
+	{"exit", texit},
+	{"cd", cd},
+	{"env", env},
+	{NULL, NULL}
+	};
 
 	if (args[0] == NULL)
 		return (1);
-
-	for (index = 0; built_in_funcs[index]; index++)
+		
+	if (list_built_in[0].command == args[0])
 	{
-		if (built_in_funcs[index].command == args[0])
-			return ((built_in_funcs[index].func)(args));
+		_puts("Did I even run?");
+		return (texit(args));
 	}
 
 	return (execute(args));

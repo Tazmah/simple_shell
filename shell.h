@@ -8,6 +8,15 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+struct built_in_t
+{
+	char *command;
+	int (*func)(char **);
+};
+
+typedef struct built_in_t built_in_t;
+
+
 int _puts(char *string);
 char *read_line(void);
 char **to_tokens(char *user_input);
@@ -19,16 +28,9 @@ void exit(int status);
 
 /* buit in prototypes */
 
-int exit(char **);
+int texit(char **);
 int env(char **);
 int cd(char **);
 built_in_t *get_built_in(void);
 
-struct built_in_t
-{
-	char *command;
-	(int)(*func)(char **);
-};
-
-typedef struct built_in_t built_in_t;
 #endif
