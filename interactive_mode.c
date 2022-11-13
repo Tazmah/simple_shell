@@ -20,9 +20,13 @@ void interactive(char **envp)
 		if (get_cwd == NULL)
 			perror("getcwd");
 
-		_puts("Tshell:");
-		_puts(get_cwd);
-		_puts("$ ");
+		if (isatty(0))
+		{
+			_puts("Tshell:");
+			_puts(get_cwd);
+			_puts("$ ");
+		}
+
 		user_input = read_line();
 		args = to_tokens(user_input);
 		signal = execute_controller(args, envp);
