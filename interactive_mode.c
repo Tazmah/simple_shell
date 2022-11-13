@@ -12,9 +12,17 @@ void interactive(char **envp)
 	char *user_input;
 	char **args;
 	int signal;
+	char *get_cwd;
 
 	do {
-		_puts("Tshell> ");
+		get_cwd = getcwd(NULL, 0);
+
+		if (get_cwd == NULL)
+			perror("getcwd");
+
+		_puts("Tshell:");
+		_puts(get_cwd);
+		_puts("$ ");
 		user_input = read_line();
 		args = to_tokens(user_input);
 		signal = execute_controller(args, envp);
