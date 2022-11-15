@@ -12,7 +12,6 @@ int execute(char **args)
 	pid_t pid;
 	int status;
 
-
 	pid = fork();
 
 	if (pid == 0)

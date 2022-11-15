@@ -3,6 +3,7 @@
 /**
  * interactive - take the command from the
  * user and execute it
+ * @envp: array of environment variable
  *
  * Return: nothing
 */
@@ -22,13 +23,13 @@ void interactive(char **envp)
 
 		if (isatty(0))
 		{
-			_puts("Tshell:");
-			_puts(get_cwd);
-			_puts("$ ");
+			_puts(1, "Tshell:");
+			_puts(1, get_cwd);
+			_puts(1, "$ ");
 		}
 
 		user_input = read_line();
-		args = to_tokens(user_input);
+		args = to_tokens(user_input, " \n\t");
 		signal = execute_controller(args, envp);
 
 		free(args);

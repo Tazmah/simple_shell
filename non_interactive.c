@@ -4,6 +4,7 @@
  * normalMode - execute the command with the
  * argument passed in
  * @argv: the command to be executed
+ * @envp: array of environment variable
  *
  * Return: 0 if successful
 */

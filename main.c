@@ -6,6 +6,7 @@
  * is passed into the programe
  * @argc: the argument count
  * @argv: the argument vector
+ * @envp: array of environment variable
  *
  * Return: 0 if successfull
 */

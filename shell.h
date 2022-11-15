@@ -17,15 +17,18 @@ struct built_in_t
 typedef struct built_in_t built_in_t;
 
 
-int _puts(char *string);
+int _puts(int, char *string);
 char *read_line(void);
-char **to_tokens(char *user_input);
+char **to_tokens(char *user_input, char *delim);
 int execute_controller(char **args, char **envp);
 int execute(char **args);
 int normalMode(char **argv, char **envp);
 void interactive(char **);
 void exit(int status);
 int compare(char *, char *);
+int file_checker(char *);
+char **path_token(char *);
+char *append_file(char *, char *);
 
 /* buit in prototypes */
 

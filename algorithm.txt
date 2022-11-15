@@ -1,0 +1,21 @@
+* simple shell
+start
+	direct input?
+		does command exit?
+			run the command
+		else
+			print command not found
+	else
+		prompt the user for input
+		tokenize the input
+		does the command exit?
+			is input from terminal?
+				run the command
+				prompt the user
+			else
+				run the command
+				exit the program
+
+		else
+			print command not found
+end

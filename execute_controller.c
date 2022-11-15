@@ -4,6 +4,7 @@
  * execute_controller - handles the bult-in
  * functions and the executable files
  * @args: the command to execute
+ * @envp: array of environment variable
  *
  * Return: 0 always
  */
